@@ -1,5 +1,8 @@
 {
   "short_name": "Acinder",
+  "start_url": "/?source=pwa",
+  "background_color": "#2AB300",
+  "display": "standalone",
   "icons": [
     {
       "src": "/images/acinder.svg",
