@@ -3,7 +3,7 @@
   "name": "Acinder: Matching actors & actresses",
   "description": "The pseudo-tinder app to swipe actors & actresses in left and right",
   "id": "acinder",
-  "start_url": "?source=pwa",
+  "start_url": "/?source=pwa",
   "background_color": "#2AB300",
   "theme_color": "#3367D6",
   "display": "standalone",
