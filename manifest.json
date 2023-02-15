@@ -1,0 +1,10 @@
+{
+  "short_name": "Acinder",
+  "icons": [
+    {
+      "src": "/images/acinder.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
+}
