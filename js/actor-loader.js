@@ -2,6 +2,7 @@ import { WikidataQueryExecutor } from './wikidata-query-executor.js'
 
 export class ActorLoader {
 
+  #spinner = document.querySelector('#spinner')
   #portrait = document.querySelector('#portrait')
   #queryExecutor = new WikidataQueryExecutor()
   #queueOfActors = new Array()
@@ -49,7 +50,14 @@ export class ActorLoader {
   #loadMore() {
     this.#queryExecutor.query(this.#numberOfLoadedBatches * this.#loadingBatchSize, this.#loadingBatchSize)
       .then(response => {
+        const numberOfQueuedActors = this.#queueOfActors.length
+        const loadedBatchOfActors = response.results.bindings
         this.#queueOfActors.push(...response.results.bindings)
+        if (numberOfQueuedActors === 0 && loadedBatchOfActors.length > 0) {
+          this.#spinner.setAttribute('hidden', true)
+          this.#portrait.setAttribute('src', this.#queueOfActors[0].picture.value)
+          this.#portrait.removeAttribute('hidden')
+        }
         console.log(`Current queue contains ${this.#queueOfActors.length} actors.`)
       })
     this.#numberOfLoadedBatches += 1 // has to be outside of the promise chain

@@ -5,10 +5,75 @@
 
 body {
   background-color: #2ab300;
-  margin: 20px 20px 20px 20px;
+  text-align: center;
 }
 
 #slider {
-  height: 100vh;
-  border: 2px solid black;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  min-height: 90vh;
+  min-width: 90vw;
+  border: 1px solid black;
+  border-radius: 3rem;
+  background-color: whitesmoke;
+}
+
+#spinner {
+  margin: auto;
+  height: 25vh;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#portrait {
+  margin: auto;
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.controls {
+  margin-top: 80vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.control-dislike {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+}
+
+.control-dislike:hover {
+  background-color: #ff0000;
+}
+
+.control-like {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+}
+
+.control-like:hover {
+  background-color: #00ff00;
+}
+
+.control-icon {
+  width: 50%;
+  height: 50%;
 }
