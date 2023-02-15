@@ -47,7 +47,7 @@ body {
   margin-top: 80vh;
   padding-left: 15vw;
   padding-right: 15vw;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,24 +55,15 @@ body {
 
 .control {
   cursor: pointer;
-}
-
-.control-dislike {
   position: relative;
   width: 20vw;
   height: 20vw;
-  border-radius: 50%;
+  border: 1px solid black;
+  border-radius: 100%;
 }
 
 .control-dislike:hover {
   background-color: #ff0000;
-}
-
-.control-like {
-  position: relative;
-  width: 20vw;
-  height: 20vw;
-  border-radius: 50%;
 }
 
 .control-like:hover {
