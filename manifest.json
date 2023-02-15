@@ -10,7 +10,7 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/images/acinder.svg",
+      "src": "favicon.ico",
       "type": "image/svg+xml",
       "sizes": "512x512"
     }
