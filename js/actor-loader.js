@@ -2,8 +2,9 @@ import { WikidataQueryExecutor } from './wikidata-query-executor.js'
 
 export class ActorLoader {
 
-  #spinner = document.querySelector('#spinner')
-  #portrait = document.querySelector('#portrait')
+  #spinner = document.querySelector('.spinner')
+  #controls = document.querySelectorAll('.control')
+  #portrait = document.querySelector('.portrait')
   #queryExecutor = new WikidataQueryExecutor()
   #queueOfActors = new Array()
   #numberOfLoadedBatches = 0
@@ -54,9 +55,10 @@ export class ActorLoader {
         const loadedBatchOfActors = response.results.bindings
         this.#queueOfActors.push(...response.results.bindings)
         if (numberOfQueuedActors === 0 && loadedBatchOfActors.length > 0) {
-          this.#spinner.setAttribute('hidden', true)
+          this.#spinner.setAttribute('hidden', 'hidden')
           this.#portrait.setAttribute('src', this.#queueOfActors[0].picture.value)
           this.#portrait.removeAttribute('hidden')
+          this.#controls.forEach(control => control.removeAttribute('hidden'))
         }
         console.log(`Current queue contains ${this.#queueOfActors.length} actors.`)
       })

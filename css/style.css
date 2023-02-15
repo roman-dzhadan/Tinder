@@ -8,7 +8,7 @@ body {
   text-align: center;
 }
 
-#slider {
+.slider {
   display: flex;
   position: absolute;
   z-index: -1;
@@ -25,7 +25,7 @@ body {
   background-color: whitesmoke;
 }
 
-#spinner {
+.spinner {
   margin: auto;
   height: 25vh;
   animation: spin 3s linear infinite;
@@ -37,7 +37,7 @@ body {
   }
 }
 
-#portrait {
+.portrait {
   margin: auto;
   max-height: 80vh;
   max-width: 80vw;
@@ -53,7 +53,12 @@ body {
   justify-content: space-between;
 }
 
+.control {
+  cursor: pointer;
+}
+
 .control-dislike {
+  position: relative;
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
@@ -64,13 +69,14 @@ body {
 }
 
 .control-like {
+  position: relative;
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
 }
 
 .control-like:hover {
-  background-color: #00ff00;
+  background-color: #2ab300;
 }
 
 .control-icon {
