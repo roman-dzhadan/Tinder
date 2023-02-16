@@ -1,7 +1,20 @@
 :root {
-  --color--brand-primary: #ff4458;
-  --color--background-primary: #ffffff;
-  --color--icon-navigation-primary-inactive: #7c8591;
+  --header-height: 6%;
+  --footer-height: 5%;
+  --color-black: #000000;
+  --color-brand-primary: #ff4458;
+  --color-background-primary: #ffffff;
+  --color-icon-navigation-primary-inactive: #7c8591;
+  --color-rewind-dark: #7c8591;
+  --color-rewind-light: #b9bfc8;
+  --color-nope-dark: #c62c1e;
+  --color-nope-light: var(--color-brand-primary);
+  --color-super-like-dark: #106bd5;
+  --color-super-like-light: #47a1ff;
+  --color-like-dark: #129e68;
+  --color-like-light: #21d07c;
+  --color-boost-dark: #9908e8;
+  --color-boost-light: #ba52f5;
 }
 
 * {
@@ -15,32 +28,125 @@ body {
 }
 
 header {
-  background-color: var(--color--background-primary);
+  background-color: var(--color-background-primary);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  height: 6%;
+  height: var(--header-height);
 }
 
 .header-logo {
-  fill: var(--color--brand-primary);
+  fill: var(--color-brand-primary);
+}
+
+.icon-navigation-primary-active {
+  fill: var(--color-brand-primary);
 }
 
 .icon-navigation-primary-inactive {
-  fill: var(--color--icon-navigation-primary-inactive);
+  fill: var(--color-icon-navigation-primary-inactive);
 }
 
 main {
-  height: 88%;
+  height: calc(100% - var(--header-height) - var(--footer-height));
   background-color: #f2f2f2;
+  position: relative;
+  padding: 10px;
 }
 
-footer {
-  background-color: var(--color--background-primary);
+.slider {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../images/girls/girl.webp");
+  border-radius: 10px;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.slider-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  height: 6%;
+  position: relative;
+  top: 80%;
+  height: 20%;
+}
+
+button {
+  cursor: pointer;
+  background: var(--color-black);
+  border-radius: 100%;
+  z-index: 5;
+}
+
+.slider-large-button {
+  width: 7vh;
+  height: 7vh;
+}
+
+.slider-small-button {
+  width: 5vh;
+  height: 5vh;
+}
+
+.slider-rewind-button {
+  border: 2px solid var(--color-rewind-dark);
+}
+
+.slider-rewind-button-icon {
+  fill: var(--color-rewind-light);
+}
+
+.slider-nope-button {
+  border: 2px solid var(--color-nope-dark);
+}
+
+.slider-nope-button:hover {
+  border: 2px solid var(--color-nope-dark);
+}
+
+.slider-nope-button-icon {
+  fill: var(--color-nope-light);
+}
+
+.slider-super-like-button {
+  border: 2px solid var(--color-super-like-dark);
+}
+
+.slider-super-like-button-icon {
+  fill: var(--color-super-like-light);
+}
+
+.slider-like-button {
+  border: 2px solid var(--color-like-dark);
+}
+
+.slider-like-button-icon {
+  fill: var(--color-like-light);
+}
+
+.slider-boost-button {
+  border: 2px solid var(--color-boost-dark);
+}
+
+button:hover {
+  scale: 1.2;
+}
+
+.slider-boost-button-icon {
+  fill: var(--color-boost-light);
+}
+
+footer {
+  background-color: var(--color-background-primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: var(--footer-height);
 }
